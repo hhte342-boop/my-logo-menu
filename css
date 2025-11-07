@@ -1,0 +1,89 @@
+/* အခြေခံ Style များ */
+body {
+    background-color: #000; /* အမည်းရောင် Background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* Superman Logo အပြင်ဘက်ဒိုင်းပုံစံ (အနီ) */
+.superman-logo {
+    position: relative;
+    width: 250px;
+    height: 180px;
+    /* ၆ ဘက်ပါ စိန်ပုံစံ ဖန်တီးရန် clip-path ကို အသုံးပြုသည်။ */
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    background-color: #CC0000; /* Superman Logo အနီရောင် */
+    box-shadow: 0 0 40px rgba(255, 0, 0, 0.8); /* အပြင်ဘက် အနီရောင် Glow */
+}
+
+/* အတွင်းဘက်ဒိုင်းပုံစံ (အဝါ) */
+.shield-outer {
+    position: absolute;
+    top: 5px; /* အနီဘောင်အတွက် အနည်းငယ် ခြားထားခြင်း */
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    /* ၆ ဘက်ပါ စိန်ပုံစံကို ပြန်ဖန်တီးသည်။ */
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    background-color: #FFD900; /* Superman Logo အဝါရောင် */
+}
+
+/* S စာလုံး ထည့်မယ့် နေရာ (အနီရောင်ဘောင် အနည်းငယ်) */
+.shield-inner {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    background-color: #CC0000; /* S စာလုံးပတ်လည် အနီရောင် */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* S စာလုံးပုံစံ */
+.s-letter {
+    color: #FFD900; /* S စာလုံး အဝါရောင် */
+    font-size: 100px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    line-height: 1;
+    text-shadow: 
+        0 0 10px rgba(255, 217, 0, 0.5), /* S စာလုံးအတွက် အဝါရောင် Glow */
+        0 0 20px rgba(255, 217, 0, 0.3);
+    /* ဤနေရာတွင် S ပုံစံ အမှန်တကယ် ဖန်တီးရန်မှာ CSS ပုံဆွဲခြင်းဖြင့် ပိုမို ရှုပ်ထွေးနိုင်ပါသည်။ 
+       နမူနာအနေဖြင့် ရိုးရှင်းသော 'S' ကို အသုံးပြုထားပါသည်။ */
+}
+
+/* ⚡ အလင်းရောင် ပြေးနေတဲ့ Effect ကို ဖန်တီးခြင်း ⚡ */
+.light-runner {
+    position: absolute;
+    top: 0;
+    left: -100%; /* စစချင်းတွင် ဘယ်ဘက် အပြင်ရောက်နေစေရန် */
+    width: 30%; /* အလင်းတန်းရဲ့ အကျယ် */
+    height: 100%;
+    /* အလင်းတန်းပုံစံအတွက် Gradient ကို အသုံးပြုသည်။ */
+    background: linear-gradient(
+        to right, 
+        rgba(255, 255, 255, 0) 0%, 
+        rgba(255, 255, 255, 0.8) 50%, /* အဖြူရောင် လင်းတဲ့အပိုင်း */
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: skewX(-20deg); /* အလင်းတန်းကို စောင်းထားခြင်း */
+    animation: run-light 3s linear infinite; /* Animation ကို စတင်ခြင်း */
+}
+
+/* 🏃‍♂️ အလင်းရောင်ကို ဘယ်မှ ညာသို့ ရွေ့လျားစေမည့် Keyframes */
+@keyframes run-light {
+    0% {
+        left: -30%; /* ဘယ်ဘက် အစွန်းဆုံးကနေ စပါမည် */
+    }
+    100% {
+        left: 100%; /* ညာဘက် အစွန်းဆုံးအထိ ရောက်သွားပါမည် */
+    }
+}
